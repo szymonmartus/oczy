@@ -15,17 +15,23 @@
           <img class="little" onclick="showImg(this.attributes.src.value)" src="https://i.ibb.co/KjMrpTC/11png.png" id='11'></img>
           <img class="little" onclick="showImg(this.attributes.src.value)" src="https://i.ibb.co/Lxrs1Pc/12png.png" id='12'></img>
         </div>
+        <!-- <button onClick="getRadomId()">random</button>        -->
+        <!-- <span id="muteSpan"></span>  -->
         <div id="main"></div>
         <div id="buttons">
             <button onclick="deleteMessage()">Delete conversation</button>
-            <button>Block</button>
+            <button onclick="block()">Block</button>
             <button onclick="ignoreMessage()">Ignore messages</button>
             <button onclick="mute()">Mute conversation</button>
-            <button>Unfollow</button>
-            <button>Unfriend</button>
+            <button onclick="unfollow()">Unfollow</button>
+            <button onclick="unfriend()">Unfriend</button>
         </div>
     </body>
+    
     <script src="index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CIntersectionObserver%2CObject.assign%2CPromise%2CArray.from%2CArray.prototype.find%2CMath.sign"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    
 </html>
 
 

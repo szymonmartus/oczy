@@ -1,77 +1,95 @@
+* {
+  font-family: Calibri;
+}
+
 body {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.unfriend {
+  font-size: 56px;
+  color: red;
 }
 
 #list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 img {
-    height: 60px;
-    width: 100px;
-    padding: 10px;
+  height: 60px;
+  width: 90px;
+  padding: 10px;
 }
 
 .big {
-    width: 50vw;
-    height: 75vh;
+  width: 50vw;
+  height: 75vh;
 }
 
 button {
-    color: white;
-    background-color: black;
-    border: none;
-    font-family: "Courier New", Courier, monospace;
+  color: white;
+  background-color: black;
+  border: none;
 }
 
 button:hover,
 .little:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #buttons {
-    display: none;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  padding: 30px;
 }
 
 #del {
-    margin-top: 15vh;
-    margin-bottom: 5vh;
-    flex-direction: column;
-    justify-content: stretch;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+  flex-direction: column;
+  justify-content: stretch;
 }
 
 .del1 {
-    margin: 3vh;
-    display: flex;
-    width: 40vw;
-    flex-direction: row;
-    justify-content: flex-start;
+  margin: 3vh;
+  display: flex;
+  width: 40vw;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .del2 {
-    margin: 3vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  margin: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .deleteImg {
-    width: 5vw;
-    height: 8vh;
-    margin: 0;
-    padding: 1px;
+  width: 5vw;
+  height: 8vh;
+  margin: 0;
+  padding: 1px;
 }
 
 .ignoreImg {
-    width: 30vw;
-    height: 50vh;
+  width: 30vw;
+  height: 50vh;
+}
+#muteSpan {
+  color: white;
+  font-size: 42px;
+  margin-top: 400px;
+  /* visibility: hidden; */
+  width: 50vw;
 }
