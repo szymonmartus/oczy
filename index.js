@@ -85,18 +85,21 @@ const unfollow = () => {
   main.innerHTML = `<div id="unfollow"></div>`;
   var trailimage = [currentImg, 100, 99]; //image path, plus width and height
   var offsetfrommouse = [10, -20]; //image x,y offsets from cursor position in pixels. Enter 0,0 for no offset
-  var displayduration = 5; //duration in seconds image should remain visible. 0 for always.
+  var displayduration = 10; //duration in seconds image should remain visible. 0 for always.
 
   if (document.getElementById || document.all)
-    document.write(
-      '<div id="trailimageid" style="position:absolute;visibility:visible;left:0px;top:0px;width:1px;height:1px"><img src="' +
-        trailimage[0] +
-        '" border="0" width="' +
-        trailimage[1] +
-        'px" height="' +
-        trailimage[2] +
-        'px"></div>'
-    );
+    newDiv = document.createElement("div");
+  newDiv.innerHTML =
+    '<div id="trailimageid" style="position:absolute;visibility:visible;left:0px;top:0px;width:1px;height:1px"><img src="' +
+    trailimage[0] +
+    '" border="0" width="' +
+    trailimage[1] +
+    'px" height="' +
+    trailimage[2] +
+    'px"></div>';
+
+  mainDiv = document.getElementById("main");
+  document.body.insertBefore(newDiv, mainDiv);
 
   function gettrailobj() {
     if (document.getElementById)
@@ -145,10 +148,11 @@ const unfollow = () => {
 
   document.onmousemove = followmouse;
 
-  if (displayduration > 0) setTimeout("hidetrail()", displayduration * 1000);
+  if (displayduration > 0) setTimeout(hidetrail, displayduration * 1000);
 };
 
 const block = () => {
+  let count = 0;
   main.innerHTML = `<div id="main"></div>`;
   function show_image() {
     var img = document.createElement("img");
@@ -159,10 +163,15 @@ const block = () => {
 
     // set the position
     img.style.position = "absolute";
-    img.style.top = document.body.clientHeight * Math.random() + "px";
-    img.style.left = document.body.clientWidth * Math.random() + "px";
+    img.style.top = document.body.clientHeight * Math.random() - 75 + "px";
+    img.style.left = document.body.clientWidth * Math.random() - 120 + "px";
 
-    document.body.appendChild(img);
+    main.appendChild(img);
+    count += 1;
+    if (count == 300) {
+      clearInterval(runBlock);
+      main.innerHTML = `<div id="main"></div>`;
+    }
   }
   const runBlock = setInterval(show_image, 50);
 };
