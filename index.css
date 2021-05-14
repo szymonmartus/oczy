@@ -12,9 +12,18 @@ body {
   color: white;
 }
 
+#main {
+  min-width: 500px;
+  min-height: 500px;
+}
+
 .unfriend {
+  width: 70%;
   font-size: 56px;
   color: red;
+  padding: 30%;
+  z-index: 100;
+  position: absolute;
 }
 
 #list {
@@ -94,9 +103,4 @@ button:hover,
   margin-top: 400px;
   width: 500px;
   height: 500px;
-}
-
-#main {
-  min-width: 500px;
-  min-height: 500px;
 }

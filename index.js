@@ -13,7 +13,10 @@ const showImg = (attr) => {
 };
 
 const unfriend = () => {
-  main.innerHTML = `<h1 class="unfriend">YOU CAN'T UNFRIEND ME, EVER</h1>`;
+  let x = document.createElement("h1");
+  x.setAttribute("class", "unfriend");
+  x.innerText = "YOU CANT UNFRiEND ME, EVER";
+  document.body.appendChild(x);
 };
 
 const deleteMessage = () => {
